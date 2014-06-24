@@ -23,6 +23,7 @@ common_COPY_HEADERS := \
 	lib/expat.h \
 	lib/expat_external.h
 
+ifeq (0,1)
 # For the host
 # =====================================================
 
@@ -41,6 +42,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_HOST_STATIC_LIBRARY)
+endif
 
 
 include $(CLEAR_VARS)
@@ -80,6 +82,7 @@ LOCAL_CFLAGS += $(common_CFLAGS)
 LOCAL_C_INCLUDES += $(common_C_INCLUDES)
 
 LOCAL_MODULE:= libexpat_static
+LOCAL_MODULE_FILENAME:= libexpat
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 LOCAL_MODULE_TAGS := optional
 
